@@ -39,3 +39,14 @@ $ ssh -i <pemfile>.pem ec2-user@<ip> -L <port1>:vpc-nmg-pim-prod-elasticsearch-4
 ```sh
 $ aws ssm get-parameters-by-path --path "/my/specific/path/" --profile my-profile
 ```
+
+### Cloudwatch
+
+1. AWS command to describe-log-streams for a log-group
+```sh
+$ aws logs describe-log-streams --log-group-name "my-log-group" --profile my-profile
+```
+2. AWS command to get log-events from a log-streams and a log-group
+```sh
+$ aws logs get-log-events --log-group-name "my-log-group" --log-stream-name "2019/03/08/[$LATEST]d105ddde6fb74a13984cb422eb841c96" --profile my-profile
+```
