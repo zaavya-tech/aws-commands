@@ -31,3 +31,11 @@ $ ssh -i <pemfile>.pem ec2-user@<ip> -L <port1>:vpc-nmg-pim-prod-elasticsearch-4
 * ip: IP of the EC2 instance you are attempting to connect to.
 * port1: refers to the inbound port, the port you will be listening on.
 * port2: refers to the outbound port, the port you want to listen to. this can depends on the services (Neptune has 8182, Elasticsearch has 443, Elasticache 6379 etc)
+
+
+### SSM
+
+1. Get SSM parameters by path with profile
+```sh
+$ aws ssm get-parameters-by-path --path "/my/specific/path/" --profile my-profile
+```
